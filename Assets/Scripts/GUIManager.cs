@@ -9,15 +9,10 @@ using DG.Tweening;
 
 public class GUIManager : MonoBehaviour
 {
-
     public Transform ButtonPanel;
-    
     public Button OptionButton;
-
     public Text Text;
-
     public Text Speaker;
-
     public GameObject Delta;
 
     private void Start()
@@ -26,9 +21,5 @@ public class GUIManager : MonoBehaviour
             .SetLoops(-1, LoopType.Restart);
     }
 
-    void Update()
-    {
-
-    }
 
 }

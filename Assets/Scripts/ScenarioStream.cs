@@ -8,19 +8,14 @@ using UnityEngine.UI;
 
 public class ScenarioStream
 {
-    GameController gc;
-
+    private GameController gc;
     public Actions Actions;
+
     private GUIManager gui;
     private SceneHolder sceneHolder;
-
-
-
-    Sequence seq = DOTween.Sequence();
-
+    private Sequence seq = DOTween.Sequence();
     private bool isOptionsShowed;
-
-    Scene currentScene;
+    private Scene currentScene;
 
     public ScenarioStream(GameController gc)
     {
@@ -31,14 +26,12 @@ public class ScenarioStream
         seq.Complete();
     }
 
-
     public void WaitClick()
     {
         if (currentScene != null)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //ボタンをクリックしたときに反応しないようにする
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
                     Vector2 tapPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -70,8 +63,6 @@ public class ScenarioStream
         currentScene.SendLines();
     }
 
-
-
     public void SetScene(string id)
     {
         currentScene = sceneHolder.Scenes.Find(s => s.ID == id);
@@ -79,7 +70,6 @@ public class ScenarioStream
         if (currentScene == null) Debug.LogError("scenario not found");
         SetNextProcess();
     }
-
 
     public void SetText(string text)
     {
@@ -95,11 +85,11 @@ public class ScenarioStream
                 (
                 gui.Text.DOText
                 (
-                    text,    // 表示したい文字列
-                     text.Length * 0.02f // 全てを表示するのにかかる時間
+                    text,    
+                    text.Length * 0.02f 
                 ).SetEase(Ease.Linear).OnComplete(() =>
                 {
-                    //index++;
+                   
                 })
                 );
         }
@@ -109,8 +99,6 @@ public class ScenarioStream
     {
         gui.ButtonPanel.gameObject.SetActive(isOptionsShowed);
     }
-
-
 
     public void SetSpeaker(string s)
     {

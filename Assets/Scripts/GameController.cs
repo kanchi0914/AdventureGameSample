@@ -7,16 +7,7 @@ using DG.Tweening;
 
 public class GameController : MonoBehaviour
 {
-    
-
-    public HashSet<string> Items = new HashSet<string>();
-
-    //public ScenarioController ScenarioController;
-
     public ScenarioStream ss;
-    //Scenario scenario02;
-    public bool IsCheckedKey = false;
-
     public GameObject charactorObject;
 
     [HideInInspector]
@@ -27,14 +18,19 @@ public class GameController : MonoBehaviour
         var prefab = Resources.Load("Charactor") as GameObject;
         charactorObject = Instantiate(prefab);
         Character01 = charactorObject.GetComponent<Character>();
-        ss = new ScenarioStream(this);
-        ss.SetScene("001");
+        SetFirstScene();
     }
 
     void Update()
     {
         ss.WaitClick();
         ss.SetComponents();
+    }
+
+    void SetFirstScene()
+    {
+        ss = new ScenarioStream(this);
+        ss.SetScene("001");
     }
 
 
