@@ -9,6 +9,7 @@ using DG.Tweening;
 
 public class GUIManager : MonoBehaviour
 {
+    public Camera MainCamera;
     public Transform ButtonPanel;
     public Button OptionButton;
     public Text Text;
@@ -20,6 +21,4 @@ public class GUIManager : MonoBehaviour
         Delta.transform.DOMoveY(-0.2f, 1.0f).SetRelative().SetEase(Ease.InCubic)
             .SetLoops(-1, LoopType.Restart);
     }
-
-
 }

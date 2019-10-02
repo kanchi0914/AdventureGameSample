@@ -8,13 +8,12 @@ using UnityEngine;
 
 public class SceneHolder
 {
-    
     public List<Scene> Scenes = new List<Scene>();
-    private ScenarioStream ss;
+    private SceneController sc;
 
-    public SceneHolder(ScenarioStream ss)
+    public SceneHolder(SceneController sc)
     {
-        this.ss = ss;
+        this.sc = sc;
         Load();
     }
 
@@ -29,12 +28,10 @@ public class SceneHolder
     {
         StringReader reader = new StringReader(file.text);
         var list = new List<string>();
-        //reader.ReadLine();
         while (reader.Peek() > -1)
         {
             string line = reader.ReadLine();
-            list.Add(line); // リストに入れる
-        }
+            list.Add(line);         }
         return list;
     }
 
@@ -42,14 +39,13 @@ public class SceneHolder
     {
         var index = 0;
         var scenes = new List<Scene>();
-        var scene = new Scene(ss);
+        var scene = new Scene();
         foreach (string line in list)
         {
             if (line.Contains("#scene"))
             {
                 var ID = line.Replace("#scene=", "");
-                scene = new Scene(ss);
-                scene.ID = ID;
+                scene = new Scene(ID);
                 scenes.Add(scene);
             }
             else

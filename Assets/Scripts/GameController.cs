@@ -7,32 +7,23 @@ using DG.Tweening;
 
 public class GameController : MonoBehaviour
 {
-    public ScenarioStream ss;
-    public GameObject charactorObject;
-
-    [HideInInspector]
-    public Character Character01;
+    public SceneController Sc;
 
     void Start ()
     {
-        var prefab = Resources.Load("Charactor") as GameObject;
-        charactorObject = Instantiate(prefab);
-        Character01 = charactorObject.GetComponent<Character>();
+        Sc = new SceneController(this);
         SetFirstScene();
     }
 
     void Update()
     {
-        ss.WaitClick();
-        ss.SetComponents();
+        Sc.WaitClick();
+        Sc.SetComponents();
     }
 
     void SetFirstScene()
     {
-        ss = new ScenarioStream(this);
-        ss.SetScene("001");
+        Sc.SetScene("001");
     }
-
-
 
 }

@@ -12,26 +12,25 @@ public class Character : MonoBehaviour {
     private Dictionary<string, Sprite> sprites = new Dictionary<string, Sprite>();
     private CanvasGroup canvasGroup;
 
-    private string Name;
-
-    // Use this for initialization
+    public string Name { get; private set; }
+    
     void Start ()
     {
+
+    }
+
+    public void Init(string name)
+    {
+        this.Name = name;
         charactorObject = gameObject;
         charactorImage = charactorObject.GetComponent<SpriteRenderer>();
-        LoadImage();
         gameObject.SetActive(false);
-        Debug.Log(charactorObject);
+        LoadImage();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void LoadImage()
     {
-        var temp = Resources.LoadAll<Sprite>("Image/Charactors").ToList();
+        var temp = Resources.LoadAll<Sprite>("Image/Charactors/"+Name).ToList();
         foreach (Sprite s in temp)
         {
             sprites.Add(s.name, s);
@@ -41,15 +40,24 @@ public class Character : MonoBehaviour {
     public void SetImage(string imageID)
     {
         charactorImage.sprite = sprites[imageID];
-        charactorObject.SetActive(false);
-        Appear();
+        FadeIn();
     }
 
     public void Appear()
     {
         charactorObject.SetActive(true);
+        FadeIn();
+    }
+
+    public void FadeIn()
+    {
         charactorImage.color = new Color(1f, 1f, 1f, 0);
         charactorImage.DOFade(1.0f, 0.2f);
+    }
+
+    public void Destroy()
+    {
+        Destroy(this);
     }
 
 
