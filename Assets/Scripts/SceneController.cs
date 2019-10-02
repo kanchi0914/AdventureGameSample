@@ -138,13 +138,10 @@ public class SceneController
         
         for (int i = 0; i < Characters.Count; i++)
         {
-            var width = Screen.width;
-            var pos = Characters[i].transform.position;
-            var pos2 = gui.MainCamera.ScreenToWorldPoint(Vector3.zero);
-            var pos3 = gui.MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-
-            var posWidth = pos3.x - pos2.x;
-            var left = pos2.x + (posWidth * (i + 1) / (Characters.Count + 1));
+            var pos = gui.MainCamera.ScreenToWorldPoint(Vector3.zero);
+            var pos2 = gui.MainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+            var posWidth = pos2.x - pos.x;
+            var left = pos.x + (posWidth * (i + 1) / (Characters.Count + 1));
             var cpos = new Vector3(left, gui.MainCamera.transform.position.y, 0);
             //新しく登場する人
             if (i == Characters.Count - 1)

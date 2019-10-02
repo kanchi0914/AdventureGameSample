@@ -37,7 +37,6 @@ public class SceneHolder
 
     public List<Scene> Parse(List<string> list)
     {
-        var index = 0;
         var scenes = new List<Scene>();
         var scene = new Scene();
         foreach (string line in list)
