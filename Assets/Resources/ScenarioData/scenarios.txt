@@ -1,0 +1,70 @@
+﻿#scene=001
+#speaker=主人公
+{あ～　今日もいい天気だなぁ}
+#speaker=???
+{お～い　待ってよ～～～}
+#speaker=主人公
+{ん？この声は…}
+#chara=hiroko
+#image_hiroko=smile
+#speaker=ヒロ子
+{じゃ～ん　あたしだよ～～～
+一緒に学校行こうよ～～～}
+#speaker=主人公
+{やれやれ…面倒くさいな…}
+#image_hiroko=normal
+#speaker=ヒロ子
+{そういえば、今日はテストだったよね～勉強した？}
+#options={
+{した,002}
+{してない,003}
+}
+#scene=002
+#speaker=主人公
+{したに決まってるだろ}
+#image_hiroko=aseri
+#speaker=ヒロ子
+{ほんと～？あたし全くしてないよ～～～}
+#speaker=主人公
+{おまえはいつもそうだな～早く学校行くぞ}
+#next=004
+#scene=003
+#speaker=主人公
+{してない。面倒だから}
+#image_hiroko=smile
+#speaker=ヒロ子
+{ほんと？やった～あたしと同じだ～}
+#speaker=主人公
+{そんなんで喜ぶなよ…早く学校行くぞ}
+#next=004
+#scene=004
+#speaker=???
+{お～い　置いてかないでよ～～～}
+#speaker=主人公
+{ん？…この声は…}
+#chara=hiroko2
+#speaker=ヒロ子2
+#image_hiroko2=smile
+{じゃ～ん　ヒロ子だよ～～～}
+#speaker=主人公
+{いやおかしいだろ…なんでヒロ子が二人もいるんだよ？}
+#image_hiroko=normal
+#image_hiroko2=normal
+#speaker=ヒロ子2
+{なんかね～　朝起きたら二人に分裂してたの}
+#speaker=主人公
+{そうなのか…？}
+#speaker=???
+{お～い　置いてかないでよ～～～}
+#speaker=主人公
+{この声は…まさか…}
+#chara=hiroko3
+#image_hiroko3=smile
+#speaker=ヒロ子3
+{あたしも混ぜて～～～}
+#image_hiroko=aseri
+#image_hiroko2=aseri
+#speaker=主人公
+{もう訳わかんないよ～～～～}
+#speaker=
+{おわり}
