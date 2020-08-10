@@ -1,8 +1,8 @@
 # 概要
 Unityで作るアドベンチャーゲーム、ギャルゲーの簡単なサンプル  
-それぞれの解説記事は以下にあります
-https://kanchi0914.hatenablog.com/entry/2019/07/23/070600  
-https://kanchi0914.hatenablog.com/entry/2019/10/02/181617  
+それぞれの解説記事は以下にあります  
+https://kanchi0914.hatenablog.com/entry/2019/07/23/070600   
+https://kanchi0914.hatenablog.com/entry/2019/10/02/181617   
 
 ## 必要環境
 Unity 2019.1.14f
