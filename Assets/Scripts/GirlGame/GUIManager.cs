@@ -24,7 +24,7 @@ public class GUIManager : MonoBehaviour
     public GameObject Delta;
     public int SpriteIndex;
 
-    private DeltaType deltaType = DeltaType.ROLLING_AT_PERIOD;
+    private DeltaType deltaType = DeltaType.SWINGING_AT_PERIOD;
 
     private float messageSpeed = 0.05f;
 
