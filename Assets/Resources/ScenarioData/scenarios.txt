@@ -6,7 +6,7 @@
 #speaker=主人公
 {ん？この声は…}
 #chara=hiroko
-#image_hiroko=smile
+#image_hiroko=joy
 #speaker=ヒロ子
 {じゃ～ん　あたしだよ～～～
 一緒に学校行こうよ～～～}
@@ -22,7 +22,7 @@
 #scene=002
 #speaker=主人公
 {したに決まってるだろ}
-#image_hiroko=aseri
+#image_hiroko=upset
 #speaker=ヒロ子
 {ほんと～？あたし全くしてないよ～～～}
 #speaker=主人公
@@ -31,7 +31,7 @@
 #scene=003
 #speaker=主人公
 {してない。面倒だから}
-#image_hiroko=smile
+#image_hiroko=joy
 #speaker=ヒロ子
 {ほんと？やった～あたしと同じだ～}
 #speaker=主人公
@@ -44,7 +44,7 @@
 {ん？…この声は…}
 #chara=hiroko2
 #speaker=ヒロ子2
-#image_hiroko2=smile
+#image_hiroko2=joy
 {じゃ～ん　ヒロ子だよ～～～}
 #speaker=主人公
 {いやおかしいだろ…なんでヒロ子が二人もいるんだよ？}
@@ -59,11 +59,11 @@
 #speaker=主人公
 {この声は…まさか…}
 #chara=hiroko3
-#image_hiroko3=smile
+#image_hiroko3=joy
 #speaker=ヒロ子3
 {あたしも混ぜて～～～}
-#image_hiroko=aseri
-#image_hiroko2=aseri
+#image_hiroko=upset
+#image_hiroko2=upset
 #speaker=主人公
 {もう訳わかんないよ～～～～}
 #speaker=

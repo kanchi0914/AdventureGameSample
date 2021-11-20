@@ -16,10 +16,9 @@ public class SceneController
     private SceneReader sr;
     private string tempText;
 
-    private Sequence textSeq = DOTween.Sequence();
+    // private Sequence textSeq = DOTween.Sequence();
     private Sequence imageSeq = DOTween.Sequence();
     private bool isOptionsShowed;
-    private float messageSpeed = 0.02f;
 
     private Scene currentScene;
     public List<Character> Characters = new List<Character>();
@@ -31,7 +30,7 @@ public class SceneController
         Actions = new Actions(gc);
         sh = new SceneHolder(this);
         sr = new SceneReader(this);
-        textSeq.Complete();
+        // textSeq.Complete();
     }
 
     public void WaitClick()
@@ -63,13 +62,16 @@ public class SceneController
     public void SetComponents()
     {
         gui.ButtonPanel.gameObject.SetActive(isOptionsShowed);
-        gui.Delta.gameObject.SetActive
-            (!textSeq.IsPlaying() && !isOptionsShowed && !imageSeq.IsPlaying());
+        if (!isOptionsShowed && !imageSeq.IsPlaying())
+        {
+            gui.SetImageUnderMessageWindow();
+        }
     }
 
     public void SetNextProcess()
     {
-        if (textSeq.IsPlaying())
+        gui.PeriodImage.gameObject.SetActive(false);
+        if (gui.TextSeq.IsPlaying())
         {
             SetText(tempText);
         }
@@ -90,21 +92,7 @@ public class SceneController
     public void SetText(string text)
     {
         tempText = text;
-        if (textSeq.IsPlaying())
-        {
-            textSeq.Complete();
-        }
-        else
-        {
-            gui.Text.text = "";
-            textSeq = DOTween.Sequence();
-            textSeq.Append
-                (gui.Text.DOText
-                (
-                    text,
-                    text.Length * messageSpeed
-                ).SetEase(Ease.Linear));
-        }
+        gui.SetTextAndAnimate(text);
     }
 
     public void SetOptionsPanel()
@@ -135,7 +123,7 @@ public class SceneController
         character.Init(name);
         Characters.Add(character);
         imageSeq = DOTween.Sequence();
-        
+
         for (int i = 0; i < Characters.Count; i++)
         {
             var pos = gui.MainCamera.ScreenToWorldPoint(Vector3.zero);
@@ -147,7 +135,7 @@ public class SceneController
             if (i == Characters.Count - 1)
             {
                 imageSeq.Append(Characters[i].transform.DOMove(cpos, 0f))
-                    .OnComplete( () => character.Appear());
+                    .OnComplete(() => character.Appear());
             }
             //一人目
             else if (i == 0)
@@ -191,5 +179,4 @@ public class SceneController
             UnityEngine.Object.Destroy(t.gameObject);
         }
     }
-
 }
