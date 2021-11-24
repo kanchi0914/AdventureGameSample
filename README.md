@@ -12,7 +12,8 @@ DOTween
 1. git lfsを導入する(必須)  
    https://git-lfs.github.com/
 2. レポジトリをクローン
-3. Asset Storeから DOTween をインストール(Pro版でなくても構いません)
-4. シーンをロード  
+3. クローンしたディレクトリで`git lfs pull`
+4. Asset Storeから DOTween をインストール(Pro版でなくても構いません)
+5. シーンをロード  
    - アドベンチャーゲーム風サンプル:  Assets/Scenes/AdvGame  
    - ギャルゲー風サンプル: Assets/Scenes/GirlGame  
